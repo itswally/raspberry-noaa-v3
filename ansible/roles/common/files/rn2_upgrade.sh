@@ -117,7 +117,7 @@ fi
 echo "#####################################################"
 echo "# Perform RN2 Key file backup/stage"
 echo "#####################################################"
-${RNV3_UTILS}/rn2_backup_restore.sh backup_stage
+${RNV3_UTILS}/rnv3_backup_restore.sh backup_stage
 
 echo "#####################################################"
 echo "# Uninstall existing RN2 installation"
@@ -140,7 +140,7 @@ fi
 echo "#####################################################"
 echo "# Restore/UnStage RN2 key directories"
 echo "#####################################################"
-${RNV3_UTILS}/rn2_backup_restore.sh restore_stage
+${RNV3_UTILS}/rnv3_backup_restore.sh restore_stage
 
 echo "#####################################################"
 echo "# Execute install_and_upgrade"
