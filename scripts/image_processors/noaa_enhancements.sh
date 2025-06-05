@@ -15,7 +15,7 @@
 #   ./noaa_mcir.sh /path/to/map_overlay.png /path/to/input.wav /path/to/output.jpg
 
 # import common lib and settings
-. "$HOME/.noaa-v2.conf"
+. "$HOME/.noaa-v3.conf"
 . "$NOAA_HOME/scripts/common.sh"
 
 # input params

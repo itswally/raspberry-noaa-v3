@@ -12,7 +12,7 @@
 #   ./histogram.sh /path/to/inputfile.jpg /path/to/outputfile.jpg "my chart title" "my chart comment"
 
 # import common lib and settings
-. "$HOME/.noaa-v2.conf"
+. "$HOME/.noaa-v3.conf"
 . "$NOAA_HOME/scripts/common.sh"
 
 # change input params to sane names for readability

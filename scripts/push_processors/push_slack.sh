@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # import common lib and settings
-. "$HOME/.noaa-v2.conf"
+. "$HOME/.noaa-v3.conf"
 . "$NOAA_HOME/scripts/common.sh"
 
 NAME=${SLACK_PUSH_TO}

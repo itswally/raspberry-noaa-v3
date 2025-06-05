@@ -34,7 +34,7 @@ export PASS_DIRECTION=$7
 export PASS_SIDE=$8
 
 # export some variables for use in the annotation - note that we do not
-# want to export all of .noaa-v2.conf because it contains sensitive info
+# want to export all of .noaa-v3.conf because it contains sensitive info
 if [ "$SAT_NAME" == "NOAA 15" ]; then
   export GAIN=$NOAA_15_GAIN
   export SUN_MIN_ELEV=$NOAA_15_SUN_MIN_ELEV

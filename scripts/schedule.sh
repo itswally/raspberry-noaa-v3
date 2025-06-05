@@ -18,7 +18,7 @@
 #    to fail due to : # (wkhtmltoimage:106508): Gtk-WARNING **: 19:48:38.546: cannot open display:
 
 # import common lib and settings
-. "$HOME/.noaa-v2.conf"
+. "$HOME/.noaa-v3.conf"
 . "$NOAA_HOME/scripts/common.sh"
 
 unset `env | egrep "WAYLAND|WAYFIRE|SESSION|TERM|GIO_|DISPLAY|GPG|QT_|SAL|XDG_" | egrep -o '^[^=]+'`

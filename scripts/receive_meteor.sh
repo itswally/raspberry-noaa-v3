@@ -18,7 +18,7 @@
 TIMER_START=$(date '+%s')
 
 # import common lib and settings
-. "$HOME/.noaa-v2.conf"
+. "$HOME/.noaa-v3.conf"
 . "$NOAA_HOME/scripts/common.sh"
 capture_start="$START_DATE $(date '+%Z')"
 
@@ -79,7 +79,7 @@ if [ "$SAT_NAME" == "METEOR-M2 3" ]; then
   METEOR_FREQUENCY=$METEOR_M2_3_FREQ
 
   # export some variables for use in the annotation - note that we do not
-  # want to export all of .noaa-v2.conf because it contains sensitive info
+  # want to export all of .noaa-v3.conf because it contains sensitive info
   export GAIN=$METEOR_M2_3_GAIN
   export SUN_MIN_ELEV=$METEOR_M2_3_SUN_MIN_ELEV
   export SDR_DEVICE_ID=$METEOR_M2_3_SDR_DEVICE_ID
@@ -92,7 +92,7 @@ elif [ "$SAT_NAME" == "METEOR-M2 4" ]; then
   METEOR_FREQUENCY=$METEOR_M2_4_FREQ
 
   # export some variables for use in the annotation - note that we do not
-  # want to export all of .noaa-v2.conf because it contains sensitive info
+  # want to export all of .noaa-v3.conf because it contains sensitive info
   export GAIN=$METEOR_M2_4_GAIN
   export SUN_MIN_ELEV=$METEOR_M2_4_SUN_MIN_ELEV
   export SDR_DEVICE_ID=$METEOR_M2_4_SDR_DEVICE_ID

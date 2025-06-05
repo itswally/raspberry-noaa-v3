@@ -12,7 +12,7 @@
 #   ./noaa_normalize_annotate.sh /path/to/inputfile.jpg 95
 
 # import common lib and settings
-. "$HOME/.noaa-v2.conf"
+. "$HOME/.noaa-v3.conf"
 . "$NOAA_HOME/scripts/common.sh"
 
 # input params
