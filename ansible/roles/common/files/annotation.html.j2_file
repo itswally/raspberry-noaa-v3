@@ -26,7 +26,7 @@
     <tr>
       <td style="width: 310px;">
         <center>
-          <img height="72" src="raspberry-noaa-v2-logo.png" alt="RaspbiNOAA v2 Logo">
+          <img height="72" src="raspberry-noaa-v3-logo.png" alt="RaspbiNOAA v3 Logo">
           <br>
           <font color="black">RaspiNOAA V2 | v4.0 | Bookworm 64-bit<br>https://{{ web_server_name }}</font>
         </center>
