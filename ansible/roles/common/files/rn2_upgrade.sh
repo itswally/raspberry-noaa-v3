@@ -122,7 +122,7 @@ ${RNV3_UTILS}/rnv3_backup_restore.sh backup_stage
 echo "#####################################################"
 echo "# Uninstall existing RN2 installation"
 echo "#####################################################"
-${RNV3_UTILS}/rn2_uninstall.sh
+${RNV3_UTILS}/rnv3_uninstall.sh
 
 echo "#####################################################"
 echo "# Swap in git cloned repository into users home"
