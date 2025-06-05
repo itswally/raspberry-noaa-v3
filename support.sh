@@ -85,7 +85,7 @@ done < <(cat /proc/meminfo | grep Mem)
 
 echo "---------------------------------------------"
 echo "Git local config:"
-cat ${HOME}/raspberry-noaa-v2/.git/config
+cat ${HOME}/raspberry-noaa-v3/.git/config
 
 
 echo "---------------------------------------------"
@@ -115,12 +115,12 @@ else
   done
 fi
 
-if [[ -f ${HOME}/raspberry-noaa-v2/scripts/tools/verification_tool/verification.sh ]]; then
+if [[ -f ${HOME}/raspberry-noaa-v3/scripts/tools/verification_tool/verification.sh ]]; then
   echo "---------------------------------------------"
   echo "Execute Verification Tool"
-  ${HOME}/raspberry-noaa-v2/scripts/tools/verification_tool/verification.sh quick
+  ${HOME}/raspberry-noaa-v3/scripts/tools/verification_tool/verification.sh quick
 fi
 
 echo "---------------------------------------------"
-echo "Attach support log --> ${HOME}/raspberry-noaa-v2/support.log"
-} | tee ${HOME}/raspberry-noaa-v2/support.log
+echo "Attach support log --> ${HOME}/raspberry-noaa-v3/support.log"
+} | tee ${HOME}/raspberry-noaa-v3/support.log

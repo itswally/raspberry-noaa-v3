@@ -1,4 +1,4 @@
-![Raspberry NOAA](../assets/header_1600_v2.png)
+![Raspberry NOAA](../assets/header_1600_v3.png)
 
 If you want to update the annotation that exists on the images, the process is fairly straightforward.
 Simply edit the file `config/annotation/annotation.html.j2` following the instructions in the file

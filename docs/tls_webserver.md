@@ -1,6 +1,6 @@
 ![Raspberry NOAA](../assets/header_1600_v2.png)
 
-**NOTE**: Exposing the raspberry-noaa-v2 framework to the public internet is *NOT* recommended. This frameowrk has
+**NOTE**: Exposing the raspberry-noaa-v3 framework to the public internet is *NOT* recommended. This frameowrk has
 not been penetration or otherwise security tested for vulnerabilities and dangerous attack vectors. Exposing the
 webpanel to the public internet is done at your own risk and should be assumed to have no reasonable safeguards that
 can protect you from malicious actors. At a minimum, ensure your Raspberry Pi is residing on an isolated VLAN that
@@ -16,7 +16,7 @@ This minimal configuration enables the ability to do things such as
 password-protect the Admin endpoint of the webpanel when TLS is enabled in order to help prevent (but not eliminate)
 the possibility of password sniffing.
 
-To install TLS certificate on your website, first make sure you have a public IP address and open ports 80 and 443 on your router. Forward external port 80 to your setup running raspberry-noaa-v2 and port used by the non-TLS webserver (default is port 80).
+To install TLS certificate on your website, first make sure you have a public IP address and open ports 80 and 443 on your router. Forward external port 80 to your setup running raspberry-noaa-v3 and port used by the non-TLS webserver (default is port 80).
 Then, open `settings.yml` file and set:
 ```bash
 enable_non_tls: true

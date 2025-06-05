@@ -133,7 +133,7 @@ Now insert all the SDR dongles and ensure they show up as Serial #1 & #2
 
 Make a backup before changing settings.yml, just in case...
 
-	cp -p ${HOME}/raspberry-noaa-v2/config/settings.yml ${HOME}/raspberry-noaa-v2/config/settings.yml.pre_device_id_change
+	cp -p ${HOME}/raspberry-noaa-v3/config/settings.yml ${HOME}/raspberry-noaa-v3/config/settings.yml.pre_device_id_change
 
 In settings.yml you must to enable use_device_string
 
@@ -152,13 +152,13 @@ For each satellite that you want to assign a specific device id for, you must up
 
   Step #3 - Execute install_and_upgrade.sh
 
-	cd ${HOME}/raspberry-noaa-v2
+	cd ${HOME}/raspberry-noaa-v3
 	./install_and_upgrade.sh
 
   Step #4 - After the scheduled job executes for the satellite you assigned a unique device id to, confirm that the correct device ID was used.
 
        
-	view /var/log/raspberry-noaa-v2/output.log
+	view /var/log/raspberry-noaa-v3/output.log
 
 Search for source_id by typing `/source_id`   with each repeating forward `/` you type it should search through the file for occurances.
 

@@ -3,7 +3,7 @@
 In `config/settings.yml`, setting `enable_instagram_push: true` will enable pushing all captured, processed
 images to an Instagram page. See below headings for the sequence of steps required to enable this functionality.
 
-## Enable Instagram Push for raspberry-noaa-v2
+## Enable Instagram Push for raspberry-noaa-v3
 
 First, update your `config/settings.yml` file to set `enable_instagram_push: true`.
 

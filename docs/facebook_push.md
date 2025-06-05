@@ -3,7 +3,7 @@
 In `config/settings.yml`, setting `enable_facebook_push: true` will enable pushing all captured, processed
 images to a Facebook page. See below headings for the sequence of steps required to enable this functionality.
 
-## Enable Facebook Push for raspberry-noaa-v2
+## Enable Facebook Push for raspberry-noaa-v3
 
 First, update your `config/settings.yml` file to set `enable_facebook_push: true`.
 
@@ -26,7 +26,7 @@ If you want to run a manual test to ensure the Facebook configurations are accep
 from the command line and pass an actual image file (or many) to the command like so:
 
 ```bash
-${HOME}/raspberry-noaa-v2/scripts/push_processors/push_facebook.py  "test annotation" \
+${HOME}/raspberry-noaa-v3/scripts/push_processors/push_facebook.py  "test annotation" \
         "/srv/images/NOAA-15-20240826-143009-HVCT.jpg /srv/images/NOAA-15-20240826-143009-sea.jpg /srv/images/NOAA-15-20240826-143009-polar-direction.png"
 ```
 

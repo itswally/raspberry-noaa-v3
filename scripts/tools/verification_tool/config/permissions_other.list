@@ -1,6 +1,6 @@
 directory 755 $USER $USER /home/$USER
 file 644 root root /usr/share/satdump/satdump_cfg.json
-file 644 root root /etc/logrotate.d/raspberry-noaa-v2
+file 644 root root /etc/logrotate.d/raspberry-noaa-v3
 file 644 root root /etc/ntp.conf
 file 644 root root /etc/modprobe.d/rtlsdr.conf
 file 644 root root /etc/modprobe.d/airspy-blacklist.conf

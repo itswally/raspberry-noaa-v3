@@ -11,7 +11,7 @@ updates. All original content has been preserved (as have all commits up to the 
 original creators. Please see the "Credits" section of this README for additional info and contributions from the fantastic
 NOAA/METEOR community!._**
 
-Wanting to give this version a go but not sure what's involved to get from the original raspberry-noaa to raspberry-noaa-v2? Check
+Wanting to give this version a go but not sure what's involved to get from the original raspberry-noaa to raspberry-noaa-v3? Check
 out this simple [migration document](docs/migrate_from_raspberry_noaa.md) that explains the few commands you need to run and retain
 your original data!
 
@@ -19,20 +19,20 @@ Finally, if you're looking for one of the cheapest ways to get started from an a
 
 # Announcements
 
-* 31.7.2024. We are sunsetting the legacy Debian Bullseye support for Raspberry Pi and x64 PCs. We have supported it for some time after the Bookworm support came out in May 2024. Thank you for using the raspberry-noaa-v2 project on these operating systems. New updates for SatDump and other features related to SatDump **will only be available for 64-bit Raspberry OS version Bookworm, and 64-bit Debian Bookworm-based Linux distributions for x64 PCs** as of now. If you'd like to continue receiving the new updates, we highly suggest you perform a full reinstallation of your operating system and conduct a fresh installation of raspberry-noaa-v2. It is possible to save previously received images before reinstalling the operating system by making a copy of `panel.db` file inside `~/raspberry-noaa-v2/db` directory and the whole `/srv` directory; restore these files after your new installation has finished. If you're satisfied with the current features available, you are free to use the system as-is. 
+* 31.7.2024. We are sunsetting the legacy Debian Bullseye support for Raspberry Pi and x64 PCs. We have supported it for some time after the Bookworm support came out in May 2024. Thank you for using the raspberry-noaa-v3 project on these operating systems. New updates for SatDump and other features related to SatDump **will only be available for 64-bit Raspberry OS version Bookworm, and 64-bit Debian Bookworm-based Linux distributions for x64 PCs** as of now. If you'd like to continue receiving the new updates, we highly suggest you perform a full reinstallation of your operating system and conduct a fresh installation of raspberry-noaa-v3. It is possible to save previously received images before reinstalling the operating system by making a copy of `panel.db` file inside `~/raspberry-noaa-v3/db` directory and the whole `/srv` directory; restore these files after your new installation has finished. If you're satisfied with the current features available, you are free to use the system as-is. 
 
-# Raspberry NOAA (...and Meteor) V2
+# Raspberry NOAA (...and Meteor) V3
 
 NOAA and Meteor-M 2 satellite imagery capture setup for the regular 64-bit Debian Bookworm & Bullseye computers and 64-bit Raspberry OS version Bookworm!
 
-As of September 2023, raspberry-noaa-v2 officially works on any Debian-based distro! This project has been developed and tested on LMDE 6 "Faye" which is similar to the original Linux Mint, although the regular Mint is based on Ubuntu, while LMDE is based directly on Debian (Linux Mint Debian Edition). It can be downloaded from here: [https://mirrors.layeronline.com/linuxmint/debian/lmde-6-cinnamon-64bit.iso](https://mirrors.layeronline.com/linuxmint/debian/lmde-6-cinnamon-64bit.iso)
+As of September 2023, raspberry-noaa-v3 officially works on any Debian-based distro! This project has been developed and tested on LMDE 6 "Faye" which is similar to the original Linux Mint, although the regular Mint is based on Ubuntu, while LMDE is based directly on Debian (Linux Mint Debian Edition). It can be downloaded from here: [https://mirrors.layeronline.com/linuxmint/debian/lmde-6-cinnamon-64bit.iso](https://mirrors.layeronline.com/linuxmint/debian/lmde-6-cinnamon-64bit.iso)
 
 See "Credits" for the awesome way this version of the framework came to be.
 
 ## Super Easy setup: Use a maintained image
 Want a really simple way to get up and running? 
 
-VE3ELB has been maintaining a pre-built image of Raspberry-Noaa-V2 ('RN2') over here:
+VE3ELB has been maintaining a pre-built image of Raspberry-Noaa-V3 ('RNV3') over here:
 [https://qsl.net/ve3elb/RaspiNOAA/](https://qsl.net/ve3elb/RaspiNOAA/)
 Setup instructions are in the PDF that is included. 
 
@@ -61,8 +61,8 @@ sudo apt install git python3-venv -y
 
 # clone repository
 cd $HOME
-git clone --depth 1 https://github.com/jekhokie/raspberry-noaa-v2.git
-cd raspberry-noaa-v2/
+git clone --depth 1 https://github.com/jekhokie/raspberry-noaa-v3.git
+cd raspberry-noaa-v3/
 
 # Edit settings to match your station's location, gain and other things
 nano config/settings.yml
@@ -83,7 +83,7 @@ to this version 2 (keep your previous captures and make them visible).
 In addition, if you have elected to run a TLS-enabled web server, see [THIS LINK](docs/tls_webserver.md) for some additional information
 on how to set up an admin login and get your Let's Encrypt signed TLS/SSL certificate.
 
-To see what occurred during a capture event, check out the log file `/var/log/raspberry-noaa-v2/output.log`.
+To see what occurred during a capture event, check out the log file `/var/log/raspberry-noaa-v3/output.log`.
 
 ## Why a Version 2?
 
@@ -102,10 +102,10 @@ Also, check out [THIS LINK](docs/webpanel_screenshots.md) for some screen shots 
 **NOTE: ONLY 32-bit OS is supported : Recommended is 'Bookworm' Release.**
 
 The original raspberry-noaa was tested on Raspberry Pi 2 and up. However, while this compatibility may have been maintained
-with raspberry-noaa-v2, ~~this version was developed and tested on a Raspberry Pi 4 - it has not been exhaustively tested on other variants
+with raspberry-noaa-v3, ~~this version was developed and tested on a Raspberry Pi 4 - it has not been exhaustively tested on other variants
 of Raspberry Pi (but if you get it working on a version, please do submit a PR and mention it so this document can be updated!).~~, this version works on Pi 3, Pi 4 and Pi 5, and the variants of these models. If you can install 64 bit Debian Bookworm or Bullseye, it will probably work.
 
-As of September 2023, raspberry-noaa-v2 can also be installed on regular 64-bit computers running **ANY** Debian Bookworm-based distro. ~~It has been developed and tested on LMDE 6 "Faye" which I also recommend for users coming from Windows, as it has many similarities. It can be downloaded here: [https://mirrors.layeronline.com/linuxmint/debian/lmde-6-cinnamon-64bit.iso](https://mirrors.layeronline.com/linuxmint/debian/lmde-6-cinnamon-64bit.iso)~~ After providing Bookworm support, the recommended version for PCs running RN2 is plain old Debian Bookworm. Desktop environment (like Gnome, KDE, Cinammon, XFCE...) doesn't matter, it only has to be 64-bit Debian.
+As of September 2023, raspberry-noaa-v3 can also be installed on regular 64-bit computers running **ANY** Debian Bookworm-based distro. ~~It has been developed and tested on LMDE 6 "Faye" which I also recommend for users coming from Windows, as it has many similarities. It can be downloaded here: [https://mirrors.layeronline.com/linuxmint/debian/lmde-6-cinnamon-64bit.iso](https://mirrors.layeronline.com/linuxmint/debian/lmde-6-cinnamon-64bit.iso)~~ After providing Bookworm support, the recommended version for PCs running RNV3 is plain old Debian Bookworm. Desktop environment (like Gnome, KDE, Cinammon, XFCE...) doesn't matter, it only has to be 64-bit Debian.
 
 If you test with another OS - again, please submit a PR and let us know how it works out!
 
@@ -164,8 +164,8 @@ sudo apt install git python3-venv -y
 
 # clone repository
 cd $HOME
-git clone --depth 1 https://github.com/jekhokie/raspberry-noaa-v2.git
-cd raspberry-noaa-v2/
+git clone --depth 1 https://github.com/jekhokie/raspberry-noaa-v3.git
+cd raspberry-noaa-v3/
 
 # update your settings file to match your location, gain and other setup-specific settings
 nano config/settings.yml
@@ -193,7 +193,7 @@ Run:
 
 `git pull`
 
-inside the raspberry-noaa-v2 folder. If it complains about rhe changes to `settings.yml` file, make a backup of it somewhere else on your Pi like the desktop:
+inside the raspberry-noaa-v3 folder. If it complains about rhe changes to `settings.yml` file, make a backup of it somewhere else on your Pi like the desktop:
 
 `mv config/settings.yml ~/Desktop`
 
@@ -212,9 +212,9 @@ on how to handle self-signed certificates when attempting to visit your webpanel
 
 Want to switch your existing RN2 installation to a different Github branch without loosing your settings and images?  
 
-    **Introduction of RN2 Upgrade tool**
+    **Introduction of RNV3 Upgrade tool**
 
-       ${HOME}/.rn2_utils/rn2_upgrade.sh https://github.com/jekhokie/raspberry-noaa-v2.git -b beta-development
+       ${HOME}/.rnv3_utils/rnv3_upgrade.sh https://github.com/jekhokie/raspberry-noaa-v3.git -b beta-development
 
         Just point to the branch you want to switch to by modifying the above line as needed.     
 
@@ -238,7 +238,7 @@ and re-run `./install_and_upgrade.sh` - the script will take care of the rest of
 
 If you're running into issues where you're not seeing imagery after passes complete or getting blank/strange images, you can check
 out the [troubleshooting](docs/troubleshooting.md) document to try and narrow down the problem. In addition, you can inspect the log
-output file in `/var/log/raspberry-noaa-v2/output.log` to investigate potential errors or issues during capture events.
+output file in `/var/log/raspberry-noaa-v3/output.log` to investigate potential errors or issues during capture events.
 
 
 **Introduction of verification tool**
@@ -247,7 +247,7 @@ The verification tool can be used to help identify RN2 installation/configuratio
 
 Execute the verification script by passing the required argument [ quick | full ]
 
-  $HOME/raspberry-noaa-v2/scripts/tools/verification_tool/verification.sh quick
+  $HOME/raspberry-noaa-v3/scripts/tools/verification_tool/verification.sh quick
 
   Argument required:  ./verification.sh quick    or    ./verification.sh full
                         (~ 1 minute)                       (~ 5 minutes)
@@ -256,13 +256,13 @@ Execute the verification script by passing the required argument [ quick | full 
 
     nxing web page returned 200 OK status to confirm Web Portal is up.
     satdump live capture for 1 second to ensure it runs without error.
-    wxmap generates an overlay map image which can be found       : $HOME/raspberry-noaa-v2/scripts/tools/verification_tool/test_files/wxtoimg-map-output.png
-    wxtoimg generates MCIR enhanced image which can be founnd     :  $HOME/raspberry-noaa-v2/scripts/tools/verification_tool/test_files/wxtoimg-mcir-output.jpg
+    wxmap generates an overlay map image which can be found       : $HOME/raspberry-noaa-v3/scripts/tools/verification_tool/test_files/wxtoimg-map-output.png
+    wxtoimg generates MCIR enhanced image which can be founnd     :  $HOME/raspberry-noaa-v3/scripts/tools/verification_tool/test_files/wxtoimg-mcir-output.jpg
     meteordemod -h is executed to ensure it runs without error.
 
    When FULL mode is choosen meterdemod fully decodes a staged cadu file :
 
-    meteordemod generates a full set of images which can be found :  $HOME/raspberry-noaa-v2/scripts/tools/verification_tool/test_files/tmp
+    meteordemod generates a full set of images which can be found :  $HOME/raspberry-noaa-v3/scripts/tools/verification_tool/test_files/tmp
 
 Still having problems? You can email MihajloPi at mihajlo.raspberrypi@gmail.com and be sure to send him the log so he can debug the errors!
 
@@ -312,11 +312,11 @@ Pull requests are welcome! Simply follow the below pattern:
 3. `git checkout -b <my-branch-name>` to create a branch, replacing it with your actual branch name.
 4. Do some awesome feature development or bug fixes, committing to the branch regularly.
 5. `git push origin <my-branch-name>` to push your branch to your forked repository.
-6. Head back to the upstream `jekhokie/raspberry-noaa-v2` repository and submit a pull request using your branch from your forked repository.
+6. Head back to the upstream `jekhokie/raspberry-noaa-v3` repository and submit a pull request using your branch from your forked repository.
 7. Provide really good details on the development you've done within the branch, and answer any questions asked/address feedback.
 8. Profit when you see your pull request merged to the upstream master and used by the community!
 
-Make sure you keep your forked repository up to date with the upstream `jekhokie/raspberry-noaa-v2` master branch as this will make
+Make sure you keep your forked repository up to date with the upstream `jekhokie/raspberry-noaa-v3` master branch as this will make
 development and addressing merge conflicts MUCH easier in the long run.
 
 Happy coding (and receiving)!

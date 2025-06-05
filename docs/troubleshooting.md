@@ -10,7 +10,7 @@ The `at` jobs log their output and you will receive a linux mail in the `pi` use
 results after the pass and processing completes. Use the `mail` application on the command line to view the mail
 messages and investigate the log outputs for any indications of errors.
 
-In addition, all detailed log output is now captured in the directory `/var/log/raspberry-noaa-v2/` as well - check
+In addition, all detailed log output is now captured in the directory `/var/log/raspberry-noaa-v3/` as well - check
 the `output.log` files in this directory for detailed capture and processing information!
 
 # USB Access Permission
@@ -37,7 +37,7 @@ script that can be used to perform broadcast FM capture, allowing for tuning and
 Raspberry Pi and perform the following:
 
 ```bash
-cd $HOME/raspberry-noaa-v2/
+cd $HOME/raspberry-noaa-v3/
 
 # specify a frequency to use with the script
 ./scripts/testing/test_reception.sh 90.3
@@ -71,7 +71,7 @@ whats floating around.
 ```bash
 cd $HOME
 
-raspberry-noaa-v2/scripts/testing/scan_for.sh 5h
+raspberry-noaa-v3/scripts/testing/scan_for.sh 5h
 ```
 
 This will scan a range for five hours and produce a heatmap waterfall image in your current working directory afterwards.
@@ -199,14 +199,14 @@ SDR devices (see your device official documentation).
 
 Below are some useful commands in a more summary fashion:
 
-* Edit the main configuration file: `nano $HOME/raspberry-noaa-v2/config/settings.yml`
+* Edit the main configuration file: `nano $HOME/raspberry-noaa-v3/config/settings.yml`
 * View the generated configuration (do not edit this one): `less ~/.noaa-v2.conf`
-* Read the main log file: `less /var/log/raspberry-noaa-v2/output.log`
+* Read the main log file: `less /var/log/raspberry-noaa-v3/output.log`
 * List the scheduled passes: `atq`
 * Cancel a pass: `atrm <job_id>`
-* Location of the tmp directory: `/home/{{ target_user }}/raspberry-noaa-v2/tmp/`
+* Location of the tmp directory: `/home/{{ target_user }}/raspberry-noaa-v3/tmp/`
 * Location of the wav files: `/srv/audio/noaa` and `/srv/audio/meteor`
-* Location of the database: `/home/{{ target_user }}/raspberry-noaa-v2/db/panel.db`
+* Location of the database: `/home/{{ target_user }}/raspberry-noaa-v3/db/panel.db`
 * Location of the images: `/srv/images`
 
 # Webpanel Expired Certificate
@@ -219,7 +219,7 @@ to follw the instructions in the [TLS Webserver](tls_webserver.md) document rega
 browsers the very first time you access the webpanel since the certificate will be brand new to the browser.
 
 # ngix Debugging Shortcuts
-note: Older versions of Raspberry-noaa-V2 use php7.2
+note: Older versions of Raspberry-noaa-V3 use php7.2
 
 * Access log: `/var/log/nginx/access.log`
 * Error log: `/var/log/nginx/error.log`

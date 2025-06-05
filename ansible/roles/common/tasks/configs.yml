@@ -1,8 +1,8 @@
 ---
 - name: noaa environment variables
   template:
-    src: noaa-v2.conf.j2
-    dest: /home/{{ target_user }}/.noaa-v2.conf
+    src: noaa-v3.conf.j2
+    dest: /home/{{ target_user }}/.noaa-v3.conf
     owner: "{{ target_user }}"
     group: "{{ target_user }}"
     mode: 0644
@@ -56,20 +56,20 @@
     group: "{{ target_user }}"
     mode: 0644
 
-- name: log directory for raspberry-noaa-v2 logs
+- name: log directory for raspberry-noaa-v3 logs
   become: yes
   file:
-    path: /var/log/raspberry-noaa-v2
+    path: /var/log/raspberry-noaa-v3
     state: directory
     owner: "{{ target_user }}"
     group: "{{ target_user }}"
     mode: 0755
 
-- name: logrotate settings for raspberry-noaa-v2 logs
+- name: logrotate settings for raspberry-noaa-v3 logs
   become: yes
   template:
     src: logrotate-settings.j2
-    dest: /etc/logrotate.d/raspberry-noaa-v2
+    dest: /etc/logrotate.d/raspberry-noaa-v3
     owner: root
     group: root
     mode: 0644
@@ -108,56 +108,56 @@
 - name: annotation file (sample for modification)
   copy:
     src: annotation.html.j2_file
-    dest: /home/{{ target_user }}/raspberry-noaa-v2/config/annotation/annotation.html.j2
+    dest: /home/{{ target_user }}/raspberry-noaa-v3/config/annotation/annotation.html.j2
     force: no
     owner: "{{ target_user }}"
     group: "{{ target_user }}"
     mode: 0600
 
-- name: RaspbiNOAA v2 Logo
+- name: RaspbiNOAA v3 Logo
   copy:
-    src: raspberry-noaa-v2-logo.png
-    dest: /home/{{ target_user }}/raspberry-noaa-v2/config/annotation/raspberry-noaa-v2-logo.png
+    src: raspberry-noaa-v3-logo.png
+    dest: /home/{{ target_user }}/raspberry-noaa-v3/config/annotation/raspberry-noaa-v3-logo.png
     force: yes
     owner: "{{ target_user }}"
     group: "{{ target_user }}"
     mode: 0600
 
-- name: rn2_utils directory
+- name: rnv3_utils directory
   file:
-    path: /home/{{ target_user }}/.rn2_utils
+    path: /home/{{ target_user }}/.rnv3_utils
     state: directory
     owner: "{{ target_user }}"
     group: "{{ target_user }}"
     mode: 0755
 
-- name: rn2_backup_restore script
+- name: rnv3_backup_restore script
   copy:
-    src: rn2_backup_restore.sh
-    dest: /home/{{ target_user }}/.rn2_utils
+    src: rnv3_backup_restore.sh
+    dest: /home/{{ target_user }}/.rnv3_utils
     owner: "{{ target_user }}"
     group: "{{ target_user }}"
     mode: 0755
 
-- name: rn2_uninstall script
+- name: rnv3_uninstall script
   copy:
-    src: rn2_uninstall.sh
-    dest: /home/{{ target_user }}/.rn2_utils
+    src: rnv3_uninstall.sh
+    dest: /home/{{ target_user }}/.rnv3_utils
     owner: "{{ target_user }}"
     group: "{{ target_user }}"
     mode: 0755
 
-- name: rn2_upgrade script
+- name: rnv3_upgrade script
   copy:
-    src: rn2_upgrade.sh
-    dest: /home/{{ target_user }}/.rn2_utils
+    src: rnv3_upgrade.sh
+    dest: /home/{{ target_user }}/.rnv3_utils
     owner: "{{ target_user }}"
     group: "{{ target_user }}"
     mode: 0755
 
 - name: receive_noaa.sh ownership permissions
   file:
-    path: /home/{{ target_user }}/raspberry-noaa-v2/scripts/receive_noaa.sh
+    path: /home/{{ target_user }}/raspberry-noaa-v3/scripts/receive_noaa.sh
     state: file
     owner: "{{ target_user }}"
     group: "{{ target_user }}"
@@ -165,7 +165,7 @@
 
 - name: receive_meteor.sh ownership permissions
   file:
-    path: /home/{{ target_user }}/raspberry-noaa-v2/scripts/receive_meteor.sh
+    path: /home/{{ target_user }}/raspberry-noaa-v3/scripts/receive_meteor.sh
     state: file
     owner: "{{ target_user }}"
     group: "{{ target_user }}"
@@ -173,7 +173,7 @@
 
 - name: schedule.sh ownership permissions
   file:
-    path: /home/{{ target_user }}/raspberry-noaa-v2/scripts/schedule.sh
+    path: /home/{{ target_user }}/raspberry-noaa-v3/scripts/schedule.sh
     state: file
     owner: "{{ target_user }}"
     group: "{{ target_user }}"
@@ -181,9 +181,8 @@
 
 - name: common.sh ownership permissions
   file:
-    path: /home/{{ target_user }}/raspberry-noaa-v2/scripts/common.sh
+    path: /home/{{ target_user }}/raspberry-noaa-v3/scripts/common.sh
     state: file
     owner: "{{ target_user }}"
     group: "{{ target_user }}"
     mode: 0755
-...
