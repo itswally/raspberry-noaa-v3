@@ -1,0 +1,12 @@
+[Unit]
+Description=NOAA Satellite Scheduler Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/noaasvc/raspberry-noaa-v3/scripts
+ExecStart=/home/noaasvc/raspberry-noaa-v3/scripts/schedule.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
