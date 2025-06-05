@@ -29,8 +29,8 @@ if [ $EUID -eq 0 ]; then
 fi
 
 # verify the repo exists as expected in the home directory
-if [ ! -e "$HOME/raspberry-noaa-v2" ]; then
-  die "Please clone https://github.com/jekhokie/raspberry-noaa-v2 to your home directory"
+if [ ! -e "$HOME/raspberry-noaa-v3" ]; then
+  die "Please clone https://github.com/jekhokie/raspberry-noaa-v3 to your home directory"
 fi
 
 # check if this is a new install or an upgrade based on modprobe settings
@@ -68,13 +68,13 @@ fi
 
 log_running "Configure ATRM rule and PHP Controller based on scheduling user..."
 if [ $? -eq 0 ]; then
-   chmod +x $HOME/raspberry-noaa-v2/scripts/tools/atrm_rule_and_removal.sh
-   $HOME/raspberry-noaa-v2/scripts/tools/atrm_rule_and_removal.sh
+   chmod +x $HOME/raspberry-noaa-v3/scripts/tools/atrm_rule_and_removal.sh
+   $HOME/raspberry-noaa-v3/scripts/tools/atrm_rule_and_removal.sh
 else
   die "  Something failed with the install - please inspect the logs above"
 fi
 
-log_running "Running Ansible to install and/or update your raspberry-noaa-v2..."
+log_running "Running Ansible to install and/or update your raspberry-noaa-v3..."
 ansible-playbook -i ansible/hosts --extra-vars "@config/settings.yml" ansible/site.yml -e "target_user=$USER system_architecture=$(dpkg --print-architecture)"
 if [ $? -eq 0 ]; then
   log_done "  Ansible apply complete!"
@@ -83,7 +83,7 @@ else
 fi
 
 # source some env vars
-. "$HOME/.noaa-v2.conf"
+. "$HOME/.noaa-v3.conf"
 
 # Allow or remove HTTP port
 if [ "$ENABLE_NON_TLS" = true ]; then
@@ -111,8 +111,8 @@ else
 fi
 log_running "Configure PHP local time zone..."
 if [ $? -eq 0 ]; then
-   chmod +x $HOME/raspberry-noaa-v2/scripts/tools/configure_php_local_timezone.sh
-   $HOME/raspberry-noaa-v2/scripts/tools/configure_php_local_timezone.sh
+   chmod +x $HOME/raspberry-noaa-v3/scripts/tools/configure_php_local_timezone.sh
+   $HOME/raspberry-noaa-v3/scripts/tools/configure_php_local_timezone.sh
 else
   die "  Something failed with the install - please inspect the logs above"
 fi
@@ -165,7 +165,7 @@ echo ""
 echo "-------------------------------------------------------------------------------"
 log_finished "CONGRATULATIONS!"
 echo ""
-log_finished "raspberry-noaa-v2 has been successfully installed/upgraded!"
+log_finished "raspberry-noaa-v3 has been successfully installed/upgraded!"
 echo ""
 log_finished "You can view the webpanel updates by visiting the URL(s) listed in the"
 log_finished "'output web server url' and 'output web server tls url' play outputs above."
@@ -175,7 +175,7 @@ echo ""
 if [ $install_type == 'install' ]; then
   log_running "Reloading udev rules and trigger so correct permissions fire for SDR Dongles"
   sudo udevadm control --reload-rules && sudo udevadm trigger
-  log_running "Running RN2 Verification Tool..."
-  ${HOME}/raspberry-noaa-v2/scripts/tools/verification_tool/verification.sh quick
+  log_running "Running RNV3 Verification Tool..."
+  ${HOME}/raspberry-noaa-v3/scripts/tools/verification_tool/verification.sh quick
   sudo reboot
 fi
