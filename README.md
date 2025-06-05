@@ -1,5 +1,8 @@
 ![Raspberry NOAA](assets/header_1600_v2.png)
 
+**Version:** 3.0 (June 2025)  
+*Modernized Python requirements and build process*
+
 Looking for support, wanting to talk about new features, or just hanging out? Come chat with us on [Discord!](https://discord.gg/A9w68pqBuc)
 
 **_This is a spinoff of the original [raspberry-noaa](https://github.com/reynico/raspberry-noaa) created by Nico - they have
@@ -53,8 +56,8 @@ reach out by submitting an issue:
 # update os localisation settings like timezone, locale and WiFi country, and expand the filesystem
 sudo raspi-config
 
-# install git
-sudo apt install git -y
+# install git and python3-venv if not already present
+sudo apt install git python3-venv -y
 
 # clone repository
 cd $HOME
@@ -63,6 +66,12 @@ cd raspberry-noaa-v2/
 
 # Edit settings to match your station's location, gain and other things
 nano config/settings.yml
+
+# (NEW) Set up Python virtual environment and install dependencies
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
 
 # perform install
 ./install_and_upgrade.sh
@@ -147,12 +156,11 @@ install script:
 # update the system
 sudo apt update
 sudo apt full-upgrade -y
-
 # reboot the system
 sudo reboot
 
-# install git
-sudo apt install git -y
+# install git and python3-venv if not already present
+sudo apt install git python3-venv -y
 
 # clone repository
 cd $HOME
@@ -161,6 +169,12 @@ cd raspberry-noaa-v2/
 
 # update your settings file to match your location, gain and other setup-specific settings
 nano config/settings.yml
+
+# (NEW) Set up Python virtual environment and install dependencies
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
 
 # perform install
 ./install_and_upgrade.sh
