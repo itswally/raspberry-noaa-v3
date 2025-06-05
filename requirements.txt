@@ -1,0 +1,8 @@
+# Modern Python requirements for Raspberry NOAA V3
+# Add or update as needed for your environment
+pyyaml>=6.0
+jinja2>=3.0
+requests>=2.31
+mastodon.py>=1.8
+atproto>=0.0.40
+ephem>=4.1.4
