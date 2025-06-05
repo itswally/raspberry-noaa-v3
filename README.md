@@ -1,4 +1,4 @@
-![Raspberry NOAA](assets/header_1600_v2.png)
+![Raspberry NOAA](assets/header_1600_v3.png)
 
 **Version:** 3.0 (June 2025)  
 *Modernized Python requirements and build process*
